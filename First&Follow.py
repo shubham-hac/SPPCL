@@ -2,7 +2,6 @@
 import sys
 sys.setrecursionlimit(60)
 def first(string):
-    #print("first({})".format(string))
     first_ = set()
     if string in non_terminals:
         alternatives = productions_dict[string]
@@ -19,7 +18,6 @@ def first(string):
             i = 1
             while '@' in first_2:
                 first_ = first_ | (first_2 - {'@'})
-                #print('string[i:]=', string[i:])
                 if string[i:] in terminals:
                     first_ = first_ | {string[i:]}
                     break
@@ -33,9 +31,7 @@ def first(string):
             first_ = first_ | first_2
     return  first_
 def follow(nT):
-    #print("inside follow({})".format(nT))
     follow_ = set()
-    #print("FOLLOW", FOLLOW)
     prods = productions_dict.items()
     if nT==starting_symbol:
         follow_ = follow_ | {'$'}
