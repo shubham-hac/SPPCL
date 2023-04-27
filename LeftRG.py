@@ -20,12 +20,12 @@ def eliminate_left_recursion(production, num):
                 print(" can't be reduced")
         else:
             print(" is not left recursive.")
-def main():
-    num = int(input("Enter Number of Production: "))
-    production = [0] * 10
-    print("Enter the grammar:")
-    for i in range(num):
-        production[i] = input()
-    eliminate_left_recursion(production, num)
-if __name__ == "__main__":
-    main()
+
+num = int(input("Enter Number of Production: "))
+production = [0] * 10
+print("Enter the grammar:")
+for i in range(num):
+    production[i] = input()
+eliminate_left_recursion(production, num)
+# if __name__ == "__main__":
+#     main()
